@@ -1,0 +1,194 @@
+// 以下按照顺序依 Level 显示所能使用的指令
+  1:请在对话框内输入要使用的指令
+ 20:@h|@help - 列出此指令说明表
+ 20:@h2/@help2 - 列出第二指令说明表
+  1: 
+  1:--- 广播系统 ---
+  1:@main [on|off|message] - 开启/关闭全域聊天 (@main must be on to see global chat messages)
+  1:@noask - 自动拒绝交易/邀请
+ 20:@gmotd - 广播motd档案的内容给所有玩家
+ 20:@me <message> - 以以下格式显示正常讯息: *name message* (像mIRC的 /me)
+ 20:@fakename [Name] - 暂时改变你的显示名称
+ 20:@npctalk [NPC Name],[讯息内容] - Forces a NPC to display a message in normal chat.
+ 40:/b|@broadcast <讯息内容> - 含 GM 角色名称 (黄色字体)
+ 40:/nb|@kami <讯息内容> - 不含 GM 角色名称 (黄色字体)
+ 40:@kamib <讯息内容> - 不含 GM 角色名称 (蓝色字体)
+ 40:/lb|@localbroadcast <讯息内容> - 所在地图之广播, 含 GM 角色名称 (黄色字体)
+ 40:/nlb <讯息内容> - 所在地图之广播, 不含 GM 角色名称 (黄色字体)
+  1: 
+  1:--- 资料系统 ---
+  1:@commands - 显示你能使用的指令
+  1:@rates - 显示伺服器目前倍率
+  1:@uptime - 显示伺服器启动时间
+  1:@showdelay - 显示/隐藏 the "there is a delay after this skill" message.
+  1:@exp - 显示目前等级和经验值
+  1:@mobinfo/@monsterinfo/@mi [Mob ID|Part of monster name] - 显示魔物资讯 (rates, stats, drops, MVP stuff)
+  1:@iteminfo/@ii [Item ID|Part of item name] - 显示物品资讯 (类型, 价格, 其他)
+  1:@whodrops [Item ID|Part of item name] - 显示掉落此物品的魔物 (掉落此物最高机率的魔物)
+  1:@version - 显示伺服器版本
+  1:@email <actual@email> <new@email> - 改变你目前的 e-mail (角色保护)
+  1:@where [角色名称] - 显示某角色目前所在位置
+  1:@time/@date/@server_date/@serverdate/@server_time/@servertime - 显示系统日期/时间资料
+ 10:@showexp - 显示/隐藏 所获得的经验值
+ 10:@showzeny - 显示/隐藏 所获得的金钱
+ 10:@mobsearch [Mob ID|Monster Name] - 显示目前所在地图特定魔物的座标
+ 20:@who [关键字] - 列出线上角色含关键字的所有名单与其所在位置 (未输入关键字则为全部的线上使用者)
+ 20:@who2 [关键字] - 列出线上角色含关键字的所有名单与其职业 (未输入关键字则为全部的线上使用者)
+ 20:@who3 [关键字] - 列出线上角色含关键字的所有名单与其队伍与公会 (未输入关键字则为全部的线上使用者)
+ 20:@whomap|@whomap2|@whomap3 [地图名称] - 同 @who|@who2|@who3 但限定于某个地图的资料 (未输入地图名则为 GM 所在地图)
+ 20:@whogm [关键字] - 同 @who+@who2+who3, 但只显示 GM 的资料
+ 40:@charcartlist <角色名称> - 显示某角色手推车中的所有物品
+ 60: 
+ 60:@guildspy <公会名称/公会ID> - 监听某公会的聊天频道 (该公会最少要有一位成员在线上)
+ 60:@partyspy <队伍名称/队伍ID> - 监听某队伍的聊天频道 (该队伍最少要有一位成员在线上)
+ 99:@mapinfo [<0-3> [地图名称]] - 取得某地图的相关讯息列表 (0: 一般资料统计, 1: 角色, 2: NPC, 3: 露店/聊天室)
+  1: 
+  1:--- 状态变更系统 ---
+  1:@die ---- 自杀
+ 10:@go <数字/城市名称> - 瞬移至某一城市
+ 10:  -3: (记忆传点 2)    1: 梦罗克   5: 伊斯鲁得岛     9: 朱诺     13: 尼芙菲姆
+ 10:  -2: (记忆传点 1)    2: 吉芬     6: 艾尔帕兰      10: 天津     14: 洛阳
+ 10:  -1: (记忆传点 0)    3: 裴杨     7: 圣诞村        11: 昆仑     15: 复活点
+ 10:   0: 普隆德拉        4: 艾尔贝塔 8: 克魔岛        12: 汶巴拉   16: 监狱/监牢
+ 10: 
+ 20:/shift|@jumpto|@warpto|@goto <角色名称> - 瞬移至某角色所在地图座标
+/20:@jumptoid|@warptoid|@gotoid <角色 char_id> - 瞬移至某角色所在地图座标 (以 char_id 为目标)
+/20:@jumptoid2|@warptoid2|@gotoid2 <角色 account_id> - 瞬移至某角色所在地图座标 (以 account_id 为目标)
+ 20:@follow <角色名称> - 在某角色的背后跟踪, 输入自己的名字可以解除 (跟随某角色, 即使是瞬移或进传点也照跟不误)
+/20:@followid <角色 char_id> - 自动跟踪某角色 (以 char_id 为目标)
+/20:@followid2 <角色 account_id> - 自动跟踪某角色 (以 account_id 为目标)
+ 20:@mountpeco - 立刻骑上大嘴鸟或立刻将大嘴鸟放生 (会检查职业但不会检查技能)
+ 20:@disguise <魔物名称或ID> - 将外型变为某魔物的样子
+ 20:@undisguise - 将外型变为某原来的样子
+ 20:@model <发型: 0-17> <发色: 0-8> <衣服颜色: 0-4> - 改变角色外观
+ 20:@size <1-3> 改变你的大小 (1-变小 2-变大 3-正常)
+ 40:/hide|@hide - 隐身状态, 再执行一次指令则解除隐身
+ 40:@save - 将目前所在位置储存为复活点
+ 40:@load|@return - 立刻瞬移回复活点
+ 40:/mm|/mapmove|@warp|@rura|@mapmove <地图名称> <x座标> <y座标> - 瞬移至所指定的地图座标
+ 40:@jump [x [y]]- 瞬移至目前所在地图的指定座标处, 不输入座标则为随机瞬移
+ 40:@job|@jobchange <职业代码> - 变更职业
+ 40: ----- 初学者 / 一转职业 -----
+ 40:    0: 初学者            1: 剑士              2: 魔法师
+ 40:    3: 弓箭手            4: 服事              5: 商人
+ 40:    6: 盗贼
+ 40: ----- 二转职业 -----
+ 40:    7: 骑士              8: 祭祀              9: 巫师
+ 40:   10: 铁匠             11: 猎人             12: 刺客
+ 40:   14: 十字军           15: 武道家           16: 贤者
+ 40:   17: 流氓             18: 炼金术师         19: 吟游诗人
+ 40:   20: 舞娘
+ 40: ----- 进阶初学者 / 进价一转职业 -----
+ 40: 4001: 进阶初学者     4002: 进阶剑士       4003: 进阶魔法师
+ 40: 4004: 进阶弓箭手     4005: 进阶服事       4006: 进阶商人
+ 40: 4007: 进阶盗贼
+ 40: ----- 进价二转职业 -----
+ 40: 4008: 骑士领主       4009: 神官           4010: 超魔导士
+ 40: 4011: 神工匠         4012: 神射手         4013: 十字刺客
+ 40: 4015: 圣殿十字军     4016: 武术宗师       4017: 智者
+ 40: 4018: 神行太保       4019: 创造者         4020: 搞笑艺人
+ 40: 4021: 冷艳舞姬
+ 40: ----- 三转职业 (Regular to 3rd) -----
+ 40: 4054: 卢恩骑士       4055: 术士           4056: 游侠
+ 40: 4057: 大主教         4058: 机械师         4059: 十字切割者
+ 40: 4066: 皇家护卫       4067: 召唤士         4068: 宫廷乐师
+ 40: 4069: 流浪舞者       4070: 修罗           4071: 基因学家
+ 40: 4072: 暗影追迹者
+ 40: ----- 三转职业 (Transcendent to 3rd) -----
+ 40: 4060: 卢恩骑士       4061: 术士           4062: 游侠
+ 40: 4063: 大主教         4064: 机械师         4065: 十字切割者
+ 40: 4073: 皇家护卫       4074: 召唤士         4075: 宫廷乐师
+ 40: 4076: 流浪舞者       4077: 修罗           4078: 基因学家
+ 40: 4079: 暗影追迹者
+ 40: ----- Expanded Class -----
+ 40:   23: 超级初学者       24: 枪手             25: 忍者
+ 40: 4046: 跆拳道少年/少女4047: 拳圣           4049: 悟灵士
+ 40: 4050: Gangsi         4051: Death Knight   4052: Dark Collector
+ 40:--养子职业--
+ 40: 4023: 养子初学者     4024: 养子剑士       4025: 养子魔法师
+ 40: 4026: 养子弓箭手     4027: 养子服事       4028: 养子商人
+ 40: 4029: 养子盗贼       4030: 养子骑士       4031: 养子祭师
+ 40: 4032: 养子巫师       4033: 养子铁匠       4034: 养子猎人
+ 40: 4035: 养子刺客       4037: 养子十字军     4038: 养子武道家
+ 40: 4039: 养子贤者       4040: 养子流氓       4041: 养子炼金术师
+ 40: 4042: 养子吟游诗人   4043: 养子舞娘       4045: 养子超级初学者
+ 40: ---- Mounts, Modes, And Others ----
+ 40:   13 Knight (Peco)    21 Crusader (Peco)  22 Wedding          26 Christmas
+ 40:   27 Summer 4014 Lord Knight (Peco) 4022 Paladin (Peco)  4036 Baby Knight (Peco)
+ 40: 4044 Baby Crusader (Peco) 4048 Star Gladiator (Union) 4080 Rune Knight (Dragon)
+ 40: 4081 Rune Knight Trans (Dragon) 4082 Royal Guard (Gryphon)
+ 40: 4083 Royal Guard Trans (Gryphon) 4084 Ranger (Wolf) 4085 Ranger Trans (Wolf)
+ 40: 4086 Mechanic (Mado) 4087 Mechanic Trans (Mado)
+ 40:
+ 40:@heal [<HP> <SP>] - 恢复 HP/SP (可设定恢复量, 不输入恢复量则为恢复最大值)
+ 40:@option <参数1> <参数2> <参数3> - 变更角色效果 <参数 2,3 效果可重复>
+ 40:@dye/@ccolor <衣服颜色: 0-4> - 改变衣服颜色
+ 40:@hairstyle/@hstyle <发型: 0-17> - 改变发型
+ 40:@haircolor/@hcolor <发色: 0-8> - 改变发色
+ 40:@speed <1-1000> - 变更行走速度, 1 最快, 1000 最慢, 预设值为 150
+ 40:@effect <effect_id> [flag] - 使用一些看得见的效果在自己身上 (不是很明白有哪些效果, 不明)
+ 40:@dropall - 丢掉自己身上所有的道具
+ 40:@storeall - 把自己身上所有的道具存进仓库
+ 40:@killable - 准许其他角色在 PvP 以外的地方攻击得到你
+ 40:@memo [记忆传点] - 指定设置传送之阵所使用的记忆传点 (不指定储存编号: 列出所有储存点)
+ 40:@spiritball <数量: 1-1000> - 蓄气个数 [1-1000] 之间
+ 40:    (若设定数量 > 1000, 伺服器将会不稳定甚至当机)
+ 40:@questskill <技能编号> - 立刻习得某项职业新技能 (若自身职业不可使用该技能则不会显示在技能表中)
+ 40:@lostskill <技能编号> - 删除自身某项技能
+ 40:@skillid <name> - look up a skill by name
+ 40:@useskill <技能ID> <技能等级> <对象> - 使用某技能
+ 40:  初学者                 剑士                       盗贼                 商人
+ 40:  142 = 紧急治疗         144 = 移动时回复 HP        149 = 喷沙           153 = 手推车攻击
+ 40:  143 = 装死             145 = 弱点攻击             150 = 退后回避       154 = 改装手推车
+ 40:  弓箭手                 146 = 自动狂暴             151 = 捡石头         155 = 大声呐喊
+ 40:  147 = 制作箭           服事                       152 = 丢石头         魔法师
+ 40:  148 = 冲锋箭           156 = 神圣之光                                  157 = 能量外套
+ 40: @skilltree <skillnum> <target> 设定某技能所需的前置技能及其等级 (不详)
+ 40: @marry <角色名称-1> <角色名称-2> - 将两个角色结婚
+ 40: @divorce <角色名称> - 将该角色与其婚配离婚
+ 60:@alive - 复活
+ 60:@lvup|@blevel|@baselvlup <要升级的数量> - 立刻升级 Base Level 按照你输入的等级累加上去. 最大等级 255 (使用者定义).
+ 60:@joblvup|@jlevel|@joblvlup <要升级的数量> - 立刻升级 Job Level 按照你输入的等级累加上去. 基本职业最大等级 50 进阶职业最大等级 70(使用者定义).
+ 60:@allskill|@allskills|@skillall|@skillsall - 学会所有技能
+ 60:@stpoint <数量> - 增加素质点数
+ 60:@skpoint <数量> - 增加技能点数
+ 60:@zeny <数量> - 增加金钱
+ 60:@cash <数量> - Gives you the specified amount of cash points.
+ 60:@points <数量> - Gives you the specified amount of Kafra Points.
+ 60:@str,@agi,@vit,@int,@dex,@luk <数值> - 增加自身素质. 例: @str 10 将会增加 str 10 点
+ 60:@statall|@statsall|@allstats|@allstat [数值] - 增加自身所有素质, 数值留空将会直接变为最大值
+ 60: @addwarp <地图名称> <x座标> <y座标> 在目前所在地设置一个永久传点至某地图座标 (伺服器重新启动才会消失)
+ 40: 
+ 40:--- 魔物系统 ---
+ 40:@killmonster2 - 消灭目前所在地图所有的魔物 (不会掉东西)
+ 50:/monster <魔物名称> - 召唤一个魔物
+ 50:@spawn|@monster|@summon <魔物名称或ID> [<召唤数量> [<召唤出的魔物名称> [<x座标> [<y座标>]]]]
+ 50:@monster2 <召唤出的魔物名称> <魔物名称或ID> [<召唤数量> [<x座标> [<y座标>]]]
+ 50:@spawn|@monster|@summon|@monster2 "召唤出的魔物名称" <魔物名称或ID> [<召唤数量> [<x座标> [<y座标>]]]
+ 50:@spawn|@monster|@summon|@monster2 <魔物名称或ID> "召唤出的魔物名称" [<召唤数量> [<x座标> [<y座标>]]]
+ 50:    召唤魔物并给他取名字
+ 50:@monstersmall [魔物ID|魔物名称] - 召唤迷你版魔物
+ 50:@monsterbig [魔物ID|魔物名称] - 召唤巨大化的魔物
+ 60:@killmonster [地图名称] - 消灭某地图所有的魔物 (会掉东西, 不输入地图名称则为目前所在地图)
+ 40: 
+ 10:--- MISC CMD ---
+ 10:@autoloot [on|off|#] - 物品直接掉入身上
+ 10:@autotrade/@at - 离线商店
+ 10:@changegm [角色名称] - 更改公会长 (你必须是公会长)
+ 10:@changeleader [角色名称] - 更改组队团长 (你必须是组队团长)
+ 20:@request [讯息内容] - 发送讯息给所有线上GM (透过GM密语系统)
+ 40:@sound [Path way to file in Data or GRF file] - Plays a sound from the data or grf file located on the client.
+ 50:@clone [角色名称] - Spawns a supportive clone of the given player.
+ 50:@slaveclone [角色名称] - Spawns a supportive clone of the given player that follows the creator around.
+ 50:@evilclone [角色名称] - Spawns an agressive clone of the given player.
+ 60:@changesex - 改变你的性别
+ 10: 
+  1:--- 决斗指令 ---
+  1:@duel - 启动决斗
+  1:@invite - 邀请玩家进入决斗
+  1:@accept - 接受邀请进入决斗
+  1:@reject - 拒绝邀请进入决斗
+  1:@leave - 离开决斗
+  1: 
+  1:--- 邮件系统 --- (SQL限定)
+  1:@mail - 开启邮件
